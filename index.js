@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const genMd = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -58,7 +59,40 @@ function init() {
         type: "checkbox",
         message: questions[6],
         name: "license",
-        choices: ["TBD", "TBD2", "TBD3", "TBD4"]  // Insert license options here
+        choices: [
+          'Apache 2.0 License',
+          'Boost Software License 1.0',
+          'BSD 3-Clause License',
+          'BSD 2-Clause License',
+          'CC0',
+          'Attribution 4.0 International',
+          'Attribution-ShareAlike 4.0 International',
+          'Attribution-NonCommercial 4.0 International',
+          'Attribution-NoDerivates 4.0 International',
+          'Attribution-NonCommmercial-ShareAlike 4.0 International',
+          'Attribution-NonCommercial-NoDerivatives 4.0 International',
+          'Eclipse Public License 1.0',
+          'GNU GPL v3',
+          'GNU GPL v2',
+          'GNU AGPL v3',
+          'GNU LGPL v3',
+          'GNU FDL v1.3',
+          'The Hippocratic License 2.1',
+          'The Hippocratic License 3.0',
+          'IBM Public License Version 1.0',
+          'ISC License (ISC)',
+          'MIT',
+          'Mozilla Public License 2.0',
+          'Attribution License (BY)',
+          'Open Database License (ODbL)',
+          'Public Domain Dedication and License (PDDL)',
+          'Perl License',
+          'Artistic License 2.0',
+          'SIL Open Font License 1.1',
+          'Unlicense',
+          'Do What the Fuck You Want to Public License',
+          'zlib/libpng License'
+        ]
       },
       {
         type: "input",
@@ -72,10 +106,10 @@ function init() {
       }
     ])
     .then((response) =>
-      console.log(response)  // test
+      // console.log(response)  // test
 
       // Generate README file based on provided info here
-
+      console.log(genMd.generateMarkdown(response))
     )
     .catch((err) => console.error(err));
 
