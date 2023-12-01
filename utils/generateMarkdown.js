@@ -128,11 +128,25 @@ function renderLicenseSection(licenses) {
   }
 }
 
+function tableOfContentsGen() {
+  return `## Table of Contents
+
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [License](#license)
+* [Questions](#questions)`
+}
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `${renderLicenseLink(data.license)}
 
 # ${data.title}
+
+${tableOfContentsGen()}
 
 ## Description
 
