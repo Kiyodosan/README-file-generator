@@ -122,7 +122,7 @@ function renderLicenseSection(licenses) {
   } else {
     let licenseList = '';
     for (license of licenses) {
-      licenseList += license + '\n';
+      licenseList += '* ' + license + '\n';
     }
     return licenseList;
   }

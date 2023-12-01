@@ -23,7 +23,7 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-  console.log("Welcome to the professional README generator. Answer the following questions to create your README file.\n\n");
+  console.log("Welcome to the professional README generator. Answer the following questions to create your README file.\n");
 
   inquirer
     .prompt([
