@@ -17,7 +17,9 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) => err ? console.error(err) : console.log("Successfully wrote to file."));
+}
 
 // TODO: Create a function to initialize app
 function init() {
@@ -77,8 +79,8 @@ function init() {
           'GNU AGPL v3',
           'GNU LGPL v3',
           'GNU FDL v1.3',
-          'The Hippocratic License 2.1',
-          'The Hippocratic License 3.0',
+          'Hippocratic License 2.1',
+          'Hippocratic License 3.0',
           'IBM Public License Version 1.0',
           'ISC License (ISC)',
           'MIT',
@@ -90,7 +92,6 @@ function init() {
           'Artistic License 2.0',
           'SIL Open Font License 1.1',
           'Unlicense',
-          'Do What the Fuck You Want to Public License',
           'zlib/libpng License'
         ]
       },
@@ -105,14 +106,14 @@ function init() {
         name: "email"
       }
     ])
-    .then((response) =>
+    .then((response) => {
       // console.log(response)  // test
 
       // Generate README file based on provided info here
-      console.log(genMd.generateMarkdown(response))
-    )
+      const fileInfo = genMd.generateMarkdown(response)
+      writeToFile('README.md', fileInfo)
+    })
     .catch((err) => console.error(err));
-
 }
 
 // Function call to initialize app
