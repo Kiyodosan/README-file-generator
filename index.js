@@ -111,7 +111,7 @@ function init() {
 
       // Generate README file based on provided info here
       const fileInfo = genMd.generateMarkdown(response)
-      writeToFile('README.md', fileInfo)
+      writeToFile('./dist/README.md', fileInfo)
     })
     .catch((err) => console.error(err));
 }
