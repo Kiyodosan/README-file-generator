@@ -31,7 +31,7 @@ When you reach the prompt, "Choose a license for your project:", you may select 
 
 NOTE: If a license is not necessary, then you can just press the "Enter" key without selecting any licenses.
 
-When finished answering all prompts, a README.md file is created using the info you provided.
+When finished answering all prompts, a README.md file is created in the dist folder using the info you provided.
 
 ## Credits
 
